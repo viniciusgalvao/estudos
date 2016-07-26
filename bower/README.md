@@ -76,7 +76,7 @@ Exemplos:
 - <1.2.16 (aceito qualquer versão menor)
 - <= 1.2.16 (aceito qualquer versão menor ou igual)
 - latest (aceito a última versão)
-
+```
 
 Exemplo versionamento: `MAJOR.MINOR.PATCH` - `1.1.2`
 
