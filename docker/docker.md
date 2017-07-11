@@ -30,7 +30,7 @@ Baixa uma imagem.
 Executa a imagem, acessa um container e etc... Olhar o `docker help run`.  
 **comando:** `$ docker run IMAGE_NAME`
 
-**Exemplo:**
+**exemplo:**
 
 ```
 $ docker run ubuntu /bin/echo "Hello World" | Executa um novo container e passa um comando para ele executar.
@@ -46,7 +46,7 @@ Inicia a execução de um container
 Cria uma imagem a partir de alterações feita em outra imagem.  
 **comando:** `$ docker commit -a "You Name <you@email.com>" -m "node and express" CONTAINER_ID image-name:versionnumber`
 
-**Exemplo:**
+**exemplo:**
 
 ```
 $ docker commit -a "Vinícius Galvão <viniciusj16@gmail.com>" -m "node and express" ee13a6de9a0c node-express:0.1
@@ -69,7 +69,7 @@ $ docker tag node-express:0.1 node-express:latest
 ##### PUSH #####  
 Envia o container para o docker hub
 
-**Comando / Exemplo:**
+**comando / exemplo:**
 ```
 $ docker login
 $ docker tag image-name your_docker_hub_username/image-name
@@ -81,7 +81,7 @@ $ docker push your_docker_hub_username/image-name
 Lista os containers em execução, para listar todos, deve ser adicionada a flag `-a`.  
 **comando:** `$ docker ps | $ docker ps -a`
 
-**Exemplo:**
+**exemplo:**
 
 ```
 $ docker ps
@@ -92,7 +92,7 @@ $ docker rm -a
 Remove um container.  
 **comando:** `$ docker rm YOUR_CONTAINER_ID`
 
-**Exemplo:**
+**exemplo:**
 
 ```
 $ docker rm node-express
@@ -103,7 +103,7 @@ $ docker rm -f node-express | -f = force
 Remove uma imagem.  
 **comando:** `$ docker rmi YOUR_CONTAINER_ID`
 
-**Exemplo:**
+**exemplo:**
 
 ```
 $ docker rmi ubuntu
