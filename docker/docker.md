@@ -29,7 +29,6 @@ Baixa uma imagem.
 ##### RUN #####
 Executa a imagem, acessa um container e etc... Olhar o `docker help run`.  
 **comando:** `$ docker run IMAGE_NAME`
-
 **exemplo:**
 
 ```
@@ -45,7 +44,6 @@ Inicia a execução de um container
 ##### COMMIT #####  
 Cria uma imagem a partir de alterações feita em outra imagem.  
 **comando:** `$ docker commit -a "You Name <you@email.com>" -m "node and express" CONTAINER_ID image-name:versionnumber`
-
 **exemplo:**
 
 ```
@@ -59,8 +57,7 @@ $ docker commit -a "Vinícius Galvão <viniciusj16@gmail.com>" -m "node and expr
 É uma boa prática taggear imagens com uma versão específica para que outras pessoas possam saber exatamente qual a imagem que eles estão executando. Adicionar a tag latest ajuda com que outras pessoas possam simplesmente se referir a sua imagem pelo nome dela, sem a versão, para baixá-la ou executá-la (node-express no nosso caso).
 
 **comando:** `$ docker tag from-image:version new-image:version`
-
-**Exemplo:**
+**exemplo:**
 
 ```
 $ docker tag node-express:0.1 node-express:latest
@@ -80,7 +77,6 @@ $ docker push your_docker_hub_username/image-name
 ##### PS #####
 Lista os containers em execução, para listar todos, deve ser adicionada a flag `-a`.  
 **comando:** `$ docker ps | $ docker ps -a`
-
 **exemplo:**
 
 ```
@@ -91,7 +87,6 @@ $ docker rm -a
 ##### RM #####  
 Remove um container.  
 **comando:** `$ docker rm YOUR_CONTAINER_ID`
-
 **exemplo:**
 
 ```
@@ -102,7 +97,6 @@ $ docker rm -f node-express | -f = force
 ##### RMI #####  
 Remove uma imagem.  
 **comando:** `$ docker rmi YOUR_CONTAINER_ID`
-
 **exemplo:**
 
 ```
