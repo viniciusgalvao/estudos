@@ -1,4 +1,4 @@
-# DOCKER
+# Docker
 
 O Docker é um plataforma (aberta) que permite que você crie, rode e faça deploy de containers. De maneira simples, um container é o empacotamento da sua aplicação mais as dependências dela.
 
