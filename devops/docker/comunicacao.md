@@ -9,13 +9,13 @@ $ docker run -it --name nginx01 -p 8080:80 nginx /bin/bash
 $ docker run -it --name web02 --link nginx01:web1 nginx /bin/bash
 ```
 
-Para verificar se está funcionando o link execute o seguinte comando no segundo container
+Para verificar se o link entre os containers está funcionando, rode o seguinte comando no segundo container
 
 ```
 $ ping web1
 ```
 
-O resultado deve parecer com o exemplo abaixo.
+O resultado deve parecer com o exemplo abaixo
 
 ```
 PING web1 (172.17.0.2) 56(84) bytes of data.
