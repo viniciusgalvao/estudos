@@ -4,7 +4,7 @@ O Docker é um plataforma (aberta) que permite que você crie, rode e faça depl
 
 ## Sobre
 
-- ***Docker Client:***: isto é o que está sendo executado em nossa máquina. É o binário do Docker que estaremos interagindo sempre que abrirmos um terminal e executarmos $ docker pull ou $ docker run. Ele se conecta ao Docker daemon que faz todo o trabalho pesado, seja no mesmo host (no caso do Linux) ou remotamente (no nosso caso, interagindo com a nossa VirtualBox VM).
+- ***Docker Client:*** isto é o que está sendo executado em nossa máquina. É o binário do Docker que estaremos interagindo sempre que abrirmos um terminal e executarmos $ docker pull ou $ docker run. Ele se conecta ao Docker daemon que faz todo o trabalho pesado, seja no mesmo host (no caso do Linux) ou remotamente (no nosso caso, interagindo com a nossa VirtualBox VM).
 
 - ***Docker Daemon:*** isso é o que faz o trabalho pesado de construção, execução e distribuição de seus containers Docker.
 
