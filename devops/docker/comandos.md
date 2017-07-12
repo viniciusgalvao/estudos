@@ -92,6 +92,7 @@ Remove um container.
 $ docker rm node-express
 $ docker rm -f node-express | -f = force
 $ docker rm $(docker ps -a -q) | remove todos os containers do docker
+$ docker rm -v $(docker ps -a -q -f status=exited) | remove todos os containers que já morreram
 ```
 
 ### rmi  
@@ -102,6 +103,7 @@ Remove uma imagem.
 ```
 $ docker rmi ubuntu
 $ docker rmi -f ubuntu | -f = force
+$ docker rmi $(docker images -f dangling=true -q) | apaga imagens soltas
 ```
 
 ### diff  

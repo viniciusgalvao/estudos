@@ -16,4 +16,26 @@ O Docker é um plataforma (aberta) que permite que você crie, rode e faça depl
 
 ## DICAS
 
-- `crtl + p + q`: sai do container e mantém ele rodando.
+### sair do container e manter ele executando
+
+```
+crtl + p + q
+```
+
+### apagando containers que já morreram
+
+```
+$ docker rm -v $(docker ps -a -q -f status=exited)
+```
+
+### apagando imagens soltas
+
+```
+$ docker rmi $(docker images -f dangling=true -q)
+```
+
+### limpando volumes esquecidos
+
+```
+$ docker run -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker:/var/lib/docker -rm martin/docker-cleanup-volumes
+```
