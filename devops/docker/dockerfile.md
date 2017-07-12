@@ -65,11 +65,11 @@ OBS: A flag `-y` serve para dar o yes nas perguntas na hora da instalação dos 
 Para executar a construção da sua imagem baseada no `DockerFile`, basta executar o comando abaixo.
 
 ```
-$ docker build -t viniciusgalvao/apache:1.0 .
+$ docker build -t fulano/apache:1.0 .
 
 --- ou ---
 
-$ docker build -t viniciusgalvao/apache:1.0 dockerfile_path
+$ docker build -t fulano/apache:1.0 -f dockerfile_path
 ```
 
 OBS: O `.` representa o diretório local, que significa o contexto para construção da imagem. A flag `-t`, serve para taggear **"dar nome"** a nossa imagem gerada.
