@@ -29,7 +29,7 @@ MAINTEINER author_mail
 
 --- Exemplo ---
 
-FROM ubuntu
+FROM ubuntu:16.04
 MAINTEINER user@email.com
 ```
 
@@ -43,7 +43,7 @@ RUN command
 
 --- Exemplo ---
 
-FROM ubuntu
+FROM ubuntu:16.04
 MAINTEINER user@email.com
 RUN apt-get update && apt-get install -y apache2 && apt-get clean
 ```
