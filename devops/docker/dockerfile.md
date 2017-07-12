@@ -4,15 +4,25 @@ O dockerfile é um arquivo cheio de instruções (passo-a-passo) para a criaçã
 
 Antes de mais nada, só pode existir um dockerfile por diretório. Para iniciar, um arquivo chamado `Dockerfile` deve ser criado.
 
-## Sintaxe
+## Instruções
+
+```
+FROM image[:tag] # A partir de qual imagem estamos no baseando
+RUN command # Basicamente o que escrevemos em um script bash
+WORKDIR /app # Diretorio "raiz" para os comandos seguintes
+COPY . /app # Copia arquivos para dentro do container
+VOLUME /app # Volumes expostos para fora do container
+EXPOSE 3000 # Portas liberadas para fora do container
+CMD ["command", "params", "..."] # Que comando deve ser executado assim que um container sobe
+```
 
 ### from  
-Especifica qual imagem será utilizada para criação da outra imagem.
+A partir de qual imagem estamos no baseando.
 
 sintaxe:
 
 ```
-FROM image_name:version
+FROM image[:tag]
 
 --- Exemplo ---
 
@@ -34,7 +44,7 @@ MAINTEINER user@email.com
 ```
 
 ### run  
-Define o comando que deve ser executado.
+Define o comando que deve ser executado. Basicamente o que escrevemos em um script bash.
 
 sintaxe:
 
@@ -62,4 +72,4 @@ $ docker build -t viniciusgalvao/apache:1.0 .
 $ docker build -t viniciusgalvao/apache:1.0 dockerfile_path
 ```
 
-OBS: Se o DockerFile estiver na pasta usa-se o `.` para referenciar o `Dockerfile` do diretório. A flag `-t`, serve para taggear **"dar nome"** a nossa imagem gerada.
+OBS: O `.` representa o diretório local, que significa o contexto para construção da imagem. A flag `-t`, serve para taggear **"dar nome"** a nossa imagem gerada.
