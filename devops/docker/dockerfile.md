@@ -16,7 +16,7 @@ EXPOSE 3000 # Portas liberadas para fora do container
 CMD ["command", "params", "..."] # Que comando deve ser executado assim que um container sobe
 ```
 
-### from  
+### From  
 A partir de qual imagem estamos no baseando.
 
 sintaxe:
@@ -29,7 +29,7 @@ FROM image[:tag]
 FROM ubuntu:16.04
 ```
 
-### maintainer  
+### Maintainer  
 Quem criou o DockerFile.
 
 sintaxe:
@@ -43,7 +43,7 @@ FROM ubuntu:16.04
 MAINTEINER user@email.com
 ```
 
-### run  
+### Run  
 Define o comando que deve ser executado. Basicamente o que escrevemos em um script bash.
 
 sintaxe:
