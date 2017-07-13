@@ -4,9 +4,9 @@
 
 ## Uso
 
-Para iniciar os trabalhos com o `$ docker-compose`, um arquivo chamado `docker-compose.yml` deve ser criado.
+Para iniciar os trabalhos com o `$ docker-compose`, o arquivo `docker-compose.yml` deve ser criado.
 
-## Comandos Úteis
+## Comandos
 
 ```bash
 $ docker-compose build # Constroi as imagens que estão no docker-compose.yml
