@@ -11,10 +11,10 @@ Para iniciar os trabalhos com o `$ docker-compose`, o arquivo `docker-compose.ym
 ```bash
 $ docker-compose build # Constroi as imagens que estão no docker-compose.yml
 $ docker-compose build --no-cache # Constroi as imagens, ignorando as contruções anteriores
-$ docker-compose up [servico] Sobe todos os serviços ou serviço especificado
-$ docker-compose stop Para os containers que estão executando
-$ docker-compose start (Re)inicia containers parados
-$ docker-compose rm [-f] Remove containers parados
+$ docker-compose up [servico] # Sobe todos os serviços ou serviço especificado
+$ docker-compose stop # Para os containers que estão executando
+$ docker-compose start # (Re)inicia containers parados
+$ docker-compose rm [-f] # Remove containers parados
 ```
 
 ## Parâmetros

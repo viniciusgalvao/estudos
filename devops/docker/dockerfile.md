@@ -2,64 +2,53 @@
 
 O dockerfile é um arquivo cheio de instruções (passo-a-passo) para a criação da imagem do container.
 
-Só pode existir um dockerfile por diretório. Para iniciar, um arquivo chamado `Dockerfile` deve ser criado.
+## Uso
+
+Para iniciar, o arquivo `Dockerfile` deve ser criado na raiz do seu diretório. Só pode existir um `Dockerfile` por diretório.
 
 ## Instruções
 
-```
-FROM image[:tag] # A partir de qual imagem estamos no baseando
-RUN command # Basicamente o que escrevemos em um script bash
-LABEL <key>=<value> # Adiciona metadata a uma imagem
-WORKDIR /app # Diretorio "raiz" para os comandos seguintes
-COPY . /app # Copia arquivos para dentro do container
-VOLUME /app # Volumes expostos para fora do container
-EXPOSE 3000 # Portas liberadas para fora do container
-CMD ["command", "params", "..."] # Que comando deve ser executado assim que um container sobe
+```dockerfile
+# A partir de qual imagem estamos no baseando
+FROM image[:tag]
+# Basicamente o que escrevemos em um script bash
+RUN command
+# Adiciona metadata a uma imagem
+LABEL <key>=<value>
+# Diretorio "raiz" para os comandos seguintes
+WORKDIR /app
+# Copia arquivos para dentro do container  
+COPY . /app
+# Volumes expostos para fora do container
+VOLUME /app
+# Portas liberadas para fora do container
+EXPOSE 3000
+# Que comando deve ser executado assim que um container sobe
+CMD ["command", "params", "..."]
 ```
 
 ### From
 
 A partir de qual imagem estamos no baseando.
 
-sintaxe:
-
-```
+```dockerfile
 FROM image[:tag]
-
---- Exemplo ---
-
+# --- Exemplo --- #
 FROM ubuntu:16.04
-```
-
-### Maintainer
-
-Quem criou o DockerFile.
-
-sintaxe:
-
-```
-MAINTEINER author_mail
-
---- Exemplo ---
-
-FROM ubuntu:16.04
-MAINTEINER user@email.com
 ```
 
 ### Run
 
 Define o comando que deve ser executado. Basicamente o que escrevemos em um script bash.
 
-sintaxe:
-
-```
+```dockerfile
 RUN command
 
---- Exemplo ---
-
+# --- Exemplo --- #
 FROM ubuntu:16.04
-MAINTEINER user@email.com
-RUN apt-get update && apt-get install -y apache2 && apt-get clean
+RUN apt-get update \
+    && apt-get install -y apache2 \
+    && apt-get clean
 ```
 
 OBS: A flag `-y` serve para dar o yes nas perguntas na hora da instalação dos pacotes no ubuntu. O `apt-get clean` serve para limpar todos os pacotes que ele vai utilizar durante a instalação.
@@ -68,13 +57,12 @@ OBS: A flag `-y` serve para dar o yes nas perguntas na hora da instalação dos 
 
 Seta variáveis no ambiente.
 
-```
+```dockerfile
 ENV VAR_NAME="VALUE"
 
---- Exemplo ---
+# --- Exemplo --- #
 
 FROM ubuntu:16.04
-MAINTEINER user@email.com
 RUN apt-get update \
     && apt-get install -y apache2 \
     && apt-get clean
@@ -91,7 +79,7 @@ ENV APACHE_LOG_DIR="/var/log/apache2"
 Adiciona `metadata` a uma imagem.
 
 
-```
+```dockerfile
 LABEL <key>=<value>
 
 --- Exemplo ---
@@ -105,27 +93,28 @@ ENV APACHE_LOCK_DIR="/var/lock"
 ENV APACHE_PID_FILE="/var/run/apache2.pid"
 
 LABEL description="Webserver" \
-      version="1.0"
+      version="1.0" \
+      maintainer="user@email.com"
 ```
 
 ### Volume
 
 Volumes expostos para fora do container.
 
-```
+```dockerfile
 VOLUME path
 
---- Exemplo ---
+# --- Exemplo --- #
 
 FROM ubuntu:16.04
-MAINTEINER user@email.coman
 RUN apt-get update \
     && apt-get install -y apache2 \
     && apt-get clean
 ENV APACHE_LOCK_DIR="/var/lock"
 ENV APACHE_PID_FILE="/var/run/apache2.pid"
 LABEL description="Webserver" \
-      version="1.0"
+      version="1.0" \
+      maintainer="user@email.com"
 
 VOLUME /var/www/html
 ```
@@ -134,13 +123,12 @@ VOLUME /var/www/html
 
 Porta onde o container se comunica.
 
-```
+```dockerfile
 EXPOSE PORT_NUMBER
 
---- Exemplo ---
+# --- Exemplo --- #
 
 FROM ubuntu:16.04
-MAINTEINER user@email.coman
 RUN apt-get update \
     && apt-get install -y apache2 \
     && apt-get clean
@@ -148,6 +136,7 @@ ENV APACHE_LOCK_DIR="/var/lock"
 ENV APACHE_PID_FILE="/var/run/apache2.pid"
 LABEL description="Webserver" \
       version="1.0"
+      maintainer="user@email.com"
 VOLUME /var/www/html
 
 EXPOSE 80
@@ -157,10 +146,10 @@ EXPOSE 80
 
 Para executar a construção da sua imagem baseada no `DockerFile`, basta executar o comando abaixo.
 
-```
+```bash
 $ docker build -t fulano/apache:1.0 .
 
---- ou ---
+# OU
 
 $ docker build -t fulano/apache:1.0 -f dockerfile_path
 ```
