@@ -22,8 +22,8 @@ $ docker-compose rm [-f] # Remove containers parados
 Lista com os parâmetros que podem ser utilizados dentro do `docker-compose.yml`
 
 ```yml
-# version = Indica a versão do seu docker-compose.yml
-version: 1
+# version = Indica a versão do seu compose file
+version: '1'
 
 # image = Indica uma imagem
 image: ubuntu:16.04
