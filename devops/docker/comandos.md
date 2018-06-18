@@ -144,3 +144,10 @@ Visualiza todos os detalhes do container em execução.
 Exibe a estatística de consumo de cpu, memória e rede do container em execução.
 **comando:** `docker stats CONTAINER_ID`  
 **exemplo:** `docker stats 9d6982ddfe3b`
+
+### Network
+
+Ambiente de rede que você pode compartilhar entre seus diversos containers. É como vários  containers estivessem na mesma rede.
+
+**comando:** `docker network ${args}`  
+**exemplo:** `docker network create backend`
