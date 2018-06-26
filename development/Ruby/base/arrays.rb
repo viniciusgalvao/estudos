@@ -27,11 +27,11 @@ array_b.push(300)
 array_c = %w{curso de ruby on rails}
 
 # .eql?(value) = equals | .each | .size()
-if array_a.size().eql?(1) 
+if array_a.size().eql?(1)
 	puts "array_a tem uma informação"
 end
 
 # EACH => |var| << as barras é um pipe onde será associado o valor de cada elemento a uma váriabel entre as barras, como exemplo abaixo.
-array_a.each |elm|
+array_a.each do |elm|
 	puts elm
 end

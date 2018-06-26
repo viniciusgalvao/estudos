@@ -1,0 +1,17 @@
+variations = []
+produto.product_variations.each do |product_variation|
+  # variation attributes
+  variation = product_variation.as_json(only: [:available_quantity, :price, :reference, :weight]).merge(variations: [])
+  # get first variation values
+  variation[:variations].append({variation_id: product_variation.variation_id, variation_option_id: product_variation.variation_option_id})
+  # each combined variations
+  product_variation.product_variations.each do |combined_variation|
+    variation[:variations].append({
+          variation_id: combined_variation.variation_id,
+          variation_option_id: combined_variation.variation_option_id
+    })
+  end
+
+  variations.append(variation)
+end
+puts variations

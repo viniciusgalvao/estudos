@@ -1,0 +1,32 @@
+<%= form_for(child) do |f| %>
+  <% if child.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(child.errors.count, "error") %> prohibited this child from being saved:</h2>
+
+      <ul>
+      <% child.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sex %>
+    <%= f.select :sex, options_for_select([["MASCULINO", "M"], ["FEMININO", "F"]], @child.sex), {:include_blank => "SELECIONE"} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :father_id %>
+    <%= f.collection_select :father_id, @fathers, :id, :name, {:include_blank => 'Selecione um pai'} %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

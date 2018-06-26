@@ -1,0 +1,32 @@
+version: '3'
+services:
+
+  db:
+    image: mysql:5.6
+    env_file: .env.db
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - 8181:80
+    environment:
+      MYSQL_USERNAME: root
+
+  workspace:
+    build: .
+    image: ruby_workspace:latest
+    env_file: .env.app
+    tty: true
+    depends_on:
+      - db
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - "3000:3000"
+
+volumes:
+  mysql_data:

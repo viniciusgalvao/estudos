@@ -1,0 +1,23 @@
+{
+  "name": "be-mean",
+  "version": "1.0.0",
+  "description": "Simple app to pratice mean stack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "angularJS",
+    "node",
+    "mongoDB",
+    "express"
+  ],
+  "author": "Vinícius Galvão",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "mongojs": "^1.4.1"
+  }
+}
